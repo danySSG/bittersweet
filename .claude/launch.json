@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "--project", "service/backend", "uvicorn", "app.main:app", "--port", "8000", "--app-dir", "service/backend"],
+      "port": 8000
+    },
+    {
+      "name": "frontend",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/daniilfomin/Documents/Coding/music/service/frontend && exec npm run dev"],
+      "port": 3000
+    }
+  ]
+}

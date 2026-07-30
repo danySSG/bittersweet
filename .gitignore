@@ -1,0 +1,27 @@
+# окружение
+.venv/
+
+# ВАЖНО: тут твои куки/сессия YouTube — никогда не коммить и не пересылай
+auth/
+
+# данные и скачанное аудио
+data/*
+audio/
+*.webm
+*.m4a
+*.mp3
+
+# python
+__pycache__/
+*.pyc
+.python-version
+
+# HAR-экспорты с сессией
+*.har
+
+# OS/сборки
+.DS_Store
+service/frontend/.next*/
+
+# демо-режим прода: единственный файл из data/, который едет в репозиторий
+!data/features_full.csv
