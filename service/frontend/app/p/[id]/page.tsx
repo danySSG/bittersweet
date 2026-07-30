@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import { ApiError, fetchSavedPortrait } from "@/lib/api";
 import type { SavedPortrait } from "@/lib/types";
 import PortraitView from "@/components/portrait-view";
+import SiteFooter from "@/components/site-footer";
 
 type PageStatus = "loading" | "ready" | "notfound" | "error";
 
@@ -133,6 +134,7 @@ export default function SavedPortraitPage() {
         ← Bittersweet
       </Link>
       {content}
+      <SiteFooter />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 [project]
-name = "tastemap-backend"
+name = "bittersweet-backend"
 version = "0.1.0"
-description = "tastemap backend — acoustic portrait of music taste (FastAPI)"
+description = "bittersweet backend — acoustic portrait of music taste (FastAPI)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

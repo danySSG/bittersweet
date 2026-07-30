@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { YOUTUBE_LOGIN_URL } from "@/lib/api";
+import SiteFooter from "@/components/site-footer";
 import HeroGalaxy from "./hero-galaxy";
 import PlaylistForm from "./playlist-form";
 import TakeoutUpload from "./takeout-upload";
@@ -79,6 +80,8 @@ export default function LandingPage() {
           ))}
         </ol>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

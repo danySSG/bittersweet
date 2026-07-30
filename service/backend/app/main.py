@@ -42,10 +42,16 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="tastemap backend", version="0.2.0", lifespan=lifespan)
+app = FastAPI(title="bittersweet backend", version="0.2.0", lifespan=lifespan)
 
-# session-cookie (httpOnly, подписана itsdangerous — этим занимается SessionMiddleware)
-app.add_middleware(SessionMiddleware, secret_key=settings.session_secret, same_site="lax")
+# session-cookie (httpOnly, подписана itsdangerous — этим занимается SessionMiddleware).
+# https_only=Secure-флаг: False на локалке, COOKIE_SECURE=1 на проде за HTTPS-прокси.
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=settings.session_secret,
+    same_site="lax",
+    https_only=settings.cookie_secure,
+)
 
 # CORS для фронта: точный origin + credentials (cookie ходит через fetch)
 app.add_middleware(

@@ -158,7 +158,7 @@ export async function renderShareCard(
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = ACCENT;
   ctx.font = `600 40px ${MONO}`;
-  ctx.fillText("T A S T E M A P", W / 2, 130);
+  ctx.fillText("B I T T E R S W E E T", W / 2, 130);
 
   // топ-архетип: эмодзи + имя (защита от старого бэка без archetype)
   const sorted = clustersByShare(portrait);

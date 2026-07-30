@@ -3178,3 +3178,93 @@ a {
     padding: 18px 16px 20px;
   }
 }
+
+/* ---------- v0.14: футер + /privacy ---------- */
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  padding: 28px 24px 36px;
+  border-top: 1px solid var(--border);
+  margin-top: 56px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.site-footer-brand {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.site-footer-sep {
+  color: var(--border);
+}
+
+.site-footer-link {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition: color 0.15s ease;
+}
+
+.site-footer-link:hover {
+  color: var(--accent);
+}
+
+/* лендинг: футер во всю ширину, без рамок контейнера hero */
+.hero + .how + .site-footer {
+  margin-top: 72px;
+}
+
+.privacy-page {
+  max-width: 720px;
+  padding-top: 40px;
+  padding-bottom: 8px;
+}
+
+.privacy-page h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 18px 0 6px;
+}
+
+.privacy-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+}
+
+.privacy-lead {
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 34px;
+}
+
+.privacy-section {
+  margin-bottom: 30px;
+}
+
+.privacy-section h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.privacy-section p {
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.privacy-section p strong {
+  color: var(--text);
+}
+
+.privacy-page .site-footer {
+  margin-top: 44px;
+}

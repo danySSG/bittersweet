@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import SiteFooter from "@/components/site-footer";
 import {
   Suspense,
   useCallback,
@@ -917,6 +918,7 @@ export default function PortraitPage() {
       <Suspense fallback={<LoadingState />}>
         <PortraitContent />
       </Suspense>
+      <SiteFooter />
     </main>
   );
 }

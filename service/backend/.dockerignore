@@ -1,0 +1,14 @@
+# В образ едут только pyproject.toml, uv.lock и app/ — остальное шум/секреты.
+.venv
+.env
+cache.db
+tests
+__pycache__
+**/__pycache__
+*.py[oc]
+.pytest_cache
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore

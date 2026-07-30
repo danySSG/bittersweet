@@ -10,7 +10,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 # Абсолютные пути от расположения файла, НЕ от cwd — иначе тесты/uvicorn
 # сломаются при запуске из другой директории.
 BACKEND_DIR = Path(__file__).resolve().parents[1]
-REPO_ROOT = Path(__file__).resolve().parents[3]
+try:
+    REPO_ROOT = Path(__file__).resolve().parents[3]
+except IndexError:
+    # В Docker дерево короче (/app/app/config.py — выше только /app и /),
+    # parents[3] не существует. Демо-CSV там задаётся через DEMO_FEATURES_CSV.
+    REPO_ROOT = BACKEND_DIR
 
 
 class Settings(BaseSettings):
@@ -27,6 +32,10 @@ class Settings(BaseSettings):
     google_redirect_uri: str = "http://localhost:8000/auth/google/callback"
 
     session_secret: str = "dev-secret-change-me"
+
+    # Secure-флаг session-cookie. False для локалки (http://localhost),
+    # на проде за HTTPS-прокси — env COOKIE_SECURE=1. samesite остаётся lax.
+    cookie_secure: bool = False
 
     # Готовый CSV признаков из эксперимента — источник demo-портрета.
     demo_features_csv: Path = REPO_ROOT / "data" / "features_full.csv"
