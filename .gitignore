@@ -25,3 +25,4 @@ service/frontend/.next*/
 
 # демо-режим прода: единственный файл из data/, который едет в репозиторий
 !data/features_full.csv
+.claude/
